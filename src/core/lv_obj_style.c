@@ -568,6 +568,14 @@ void lv_obj_fade_out(lv_obj_t * obj, uint32_t time, uint32_t delay)
     lv_anim_start(&a);
 }
 
+void lv_obj_set_style_pad_all(lv_obj_t * obj, int32_t value, lv_style_selector_t selector)
+{
+    lv_obj_set_style_pad_left(obj, value, selector);
+    lv_obj_set_style_pad_right(obj, value, selector);
+    lv_obj_set_style_pad_top(obj, value, selector);
+    lv_obj_set_style_pad_bottom(obj, value, selector);
+}
+
 lv_text_align_t lv_obj_calculate_style_text_align(const lv_obj_t * obj, lv_part_t part, const char * txt)
 {
     lv_text_align_t align = lv_obj_get_style_text_align(obj, part);

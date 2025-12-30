@@ -389,10 +389,7 @@ void lv_screen_load_anim(lv_obj_t * scr, lv_screen_load_anim_t anim_type, uint32
  * Get the active screen of the default display
  * @return          pointer to the active screen
  */
-static inline lv_obj_t * lv_screen_active(void)
-{
-    return lv_display_get_screen_active(lv_display_get_default());
-}
+lv_obj_t * lv_screen_active(void);
 
 /**
  * Get the top layer  of the default display

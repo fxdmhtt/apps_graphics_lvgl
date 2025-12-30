@@ -53,6 +53,11 @@ lv_obj_t * lv_button_create_ex(lv_obj_t * parent, lv_button_create_info_t * crea
     return obj;
 }
 
+lv_obj_t * lv_button_create(lv_obj_t * parent)
+{
+    return lv_button_create_ex(parent, NULL);
+}
+
 /**********************
  *   STATIC FUNCTIONS
  **********************/

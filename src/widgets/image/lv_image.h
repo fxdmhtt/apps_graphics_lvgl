@@ -114,10 +114,7 @@ typedef struct {
  */
 lv_obj_t * lv_image_create_ex(lv_obj_t * parent, lv_image_create_info_t * create_info);
 
-static inline lv_obj_t * lv_image_create(lv_obj_t * parent)
-{
-    return lv_image_create_ex(parent, NULL);
-}
+lv_obj_t * lv_image_create(lv_obj_t * parent);
 
 /*=====================
  * Setter functions

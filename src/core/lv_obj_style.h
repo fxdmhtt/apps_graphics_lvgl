@@ -237,13 +237,7 @@ static inline lv_part_t lv_obj_style_get_selector_part(lv_style_selector_t selec
 
 #include "lv_obj_style_gen.h"
 
-static inline void lv_obj_set_style_pad_all(lv_obj_t * obj, int32_t value, lv_style_selector_t selector)
-{
-    lv_obj_set_style_pad_left(obj, value, selector);
-    lv_obj_set_style_pad_right(obj, value, selector);
-    lv_obj_set_style_pad_top(obj, value, selector);
-    lv_obj_set_style_pad_bottom(obj, value, selector);
-}
+void lv_obj_set_style_pad_all(lv_obj_t * obj, int32_t value, lv_style_selector_t selector);
 
 static inline void lv_obj_set_style_pad_hor(lv_obj_t * obj, int32_t value, lv_style_selector_t selector)
 {

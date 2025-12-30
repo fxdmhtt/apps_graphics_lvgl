@@ -47,10 +47,8 @@ typedef struct {
  */
 lv_obj_t * lv_button_create_ex(lv_obj_t * parent, lv_button_create_info_t * create_info);
 
-static inline lv_obj_t * lv_button_create(lv_obj_t * parent)
-{
-    return lv_button_create_ex(parent, NULL);
-}
+lv_obj_t * lv_button_create(lv_obj_t * parent);
+
 /**********************
  *      MACROS
  **********************/

@@ -277,14 +277,7 @@ static inline bool lv_color32_eq(lv_color32_t c1, lv_color32_t c2)
  * @param c     the hex input
  * @return      the color
  */
-static inline lv_color_t lv_color_hex(uint32_t c)
-{
-    lv_color_t ret;
-    ret.red = (c >> 16) & 0xff;
-    ret.green = (c >> 8) & 0xff;
-    ret.blue = (c >> 0) & 0xff;
-    return ret;
-}
+lv_color_t lv_color_hex(uint32_t c);
 
 /**
  * Create an RGB888 color
@@ -447,19 +440,13 @@ lv_color_hsv_t lv_color_to_hsv(lv_color_t color);
  * A helper for white color
  * @return      a white color
  */
-static inline lv_color_t lv_color_white(void)
-{
-    return lv_color_make(0xff, 0xff, 0xff);
-}
+lv_color_t lv_color_white(void);
 
 /**
  * A helper for black color
  * @return      a black color
  */
-static inline lv_color_t lv_color_black(void)
-{
-    return lv_color_make(0x00, 0x00, 0x00);
-}
+lv_color_t lv_color_black(void);
 
 static inline void lv_color_premultiply(lv_color32_t * c)
 {

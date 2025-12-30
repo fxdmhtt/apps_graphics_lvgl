@@ -712,6 +712,11 @@ void lv_screen_load_anim(lv_obj_t * new_scr, lv_screen_load_anim_t anim_type, ui
     if(act_scr) lv_anim_start(&a_old);
 }
 
+lv_obj_t * lv_screen_active(void)
+{
+    return lv_display_get_screen_active(lv_display_get_default());
+}
+
 /*---------------------
  * OTHERS
  *--------------------*/

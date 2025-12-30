@@ -82,6 +82,103 @@ void lv_anim_init(lv_anim_t * a)
     a->early_apply = 1;
 }
 
+void lv_anim_set_var(lv_anim_t * a, void * var)
+{
+    a->var = var;
+}
+
+void lv_anim_set_exec_cb(lv_anim_t * a, lv_anim_exec_xcb_t exec_cb)
+{
+    a->exec_cb = exec_cb;
+}
+
+void lv_anim_set_duration(lv_anim_t * a, uint32_t duration)
+{
+    a->duration = duration;
+}
+
+void lv_anim_set_time(lv_anim_t * a, uint32_t duration)
+{
+    lv_anim_set_duration(a, duration);
+}
+
+void lv_anim_set_delay(lv_anim_t * a, uint32_t delay)
+{
+    a->act_time = -(int32_t)(delay);
+}
+
+void lv_anim_set_values(lv_anim_t * a, int32_t start, int32_t end)
+{
+    a->start_value = start;
+    a->current_value = INT32_MIN;
+    a->end_value = end;
+}
+
+void lv_anim_set_custom_exec_cb(lv_anim_t * a, lv_anim_custom_exec_cb_t exec_cb)
+{
+    a->custom_exec_cb = exec_cb;
+}
+
+void lv_anim_set_path_cb(lv_anim_t * a, lv_anim_path_cb_t path_cb)
+{
+    a->path_cb = path_cb;
+}
+
+void lv_anim_set_start_cb(lv_anim_t * a, lv_anim_start_cb_t start_cb)
+{
+    a->start_cb = start_cb;
+}
+
+void lv_anim_set_get_value_cb(lv_anim_t * a, lv_anim_get_value_cb_t get_value_cb)
+{
+    a->get_value_cb = get_value_cb;
+}
+
+void lv_anim_set_completed_cb(lv_anim_t * a, lv_anim_completed_cb_t completed_cb)
+{
+    a->completed_cb = completed_cb;
+}
+
+void lv_anim_set_deleted_cb(lv_anim_t * a, lv_anim_deleted_cb_t deleted_cb)
+{
+    a->deleted_cb = deleted_cb;
+}
+
+void lv_anim_set_playback_duration(lv_anim_t * a, uint32_t duration)
+{
+    a->playback_duration = duration;
+}
+
+void lv_anim_set_playback_time(lv_anim_t * a, uint32_t duration)
+{
+    lv_anim_set_playback_duration(a, duration);
+}
+
+void lv_anim_set_playback_delay(lv_anim_t * a, uint32_t delay)
+{
+    a->playback_delay = delay;
+}
+
+void lv_anim_set_repeat_count(lv_anim_t * a, uint16_t cnt)
+{
+    a->repeat_cnt = cnt;
+}
+
+void lv_anim_set_repeat_delay(lv_anim_t * a, uint32_t delay)
+{
+    a->repeat_delay = delay;
+}
+
+void lv_anim_set_early_apply(lv_anim_t * a, bool en)
+{
+    a->early_apply = en;
+}
+
+void lv_anim_set_user_data(lv_anim_t * a, void * user_data)
+{
+    a->user_data = user_data;
+}
+
 lv_anim_t * lv_anim_start(const lv_anim_t * a)
 {
     LV_TRACE_ANIM("begin");

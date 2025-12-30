@@ -256,10 +256,7 @@ struct _lv_obj_create_info_t {
  */
 lv_obj_t * lv_obj_create_ex(lv_obj_t * parent, lv_obj_create_info_t * create_info);
 
-static inline lv_obj_t * lv_obj_create(lv_obj_t * parent)
-{
-    return lv_obj_create_ex(parent, NULL);
-}
+lv_obj_t * lv_obj_create(lv_obj_t * parent);
 
 /*=====================
  * Setter functions
@@ -316,10 +313,7 @@ void lv_obj_set_state(lv_obj_t * obj, lv_state_t state, bool v);
  * @param obj   pointer to an object
  * @param user_data   pointer to the new user_data.
  */
-static inline void lv_obj_set_user_data(lv_obj_t * obj, void * user_data)
-{
-    obj->user_data = user_data;
-}
+void lv_obj_set_user_data(lv_obj_t * obj, void * user_data);
 
 /*=======================
  * Getter functions
@@ -368,10 +362,7 @@ lv_group_t * lv_obj_get_group(const lv_obj_t * obj);
  * @param obj   pointer to an object
  * @return      the pointer to the user_data of the object
  */
-static inline void * lv_obj_get_user_data(lv_obj_t * obj)
-{
-    return obj->user_data;
-}
+void * lv_obj_get_user_data(lv_obj_t * obj);
 
 /*=======================
  * Other functions

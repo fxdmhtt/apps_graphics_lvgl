@@ -105,6 +105,11 @@ lv_obj_t * lv_obj_create_ex(lv_obj_t * parent, lv_obj_create_info_t * create_inf
     return obj;
 }
 
+lv_obj_t * lv_obj_create(lv_obj_t * parent)
+{
+    return lv_obj_create_ex(parent, NULL);
+}
+
 /*=====================
  * Setter functions
  *====================*/
@@ -215,6 +220,11 @@ void lv_obj_set_state(lv_obj_t * obj, lv_state_t state, bool v)
     else lv_obj_remove_state(obj, state);
 }
 
+void lv_obj_set_user_data(lv_obj_t * obj, void * user_data)
+{
+    obj->user_data = user_data;
+}
+
 /*=======================
  * Getter functions
  *======================*/
@@ -253,6 +263,11 @@ lv_group_t * lv_obj_get_group(const lv_obj_t * obj)
 
     if(obj->spec_attr) return obj->spec_attr->group_p;
     else return NULL;
+}
+
+void * lv_obj_get_user_data(lv_obj_t * obj)
+{
+    return obj->user_data;
 }
 
 /*-------------------

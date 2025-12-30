@@ -466,6 +466,11 @@ void lv_obj_align_to(lv_obj_t * obj, const lv_obj_t * base, lv_align_t align, in
 
 }
 
+void lv_obj_center(lv_obj_t * obj)
+{
+    lv_obj_align(obj, LV_ALIGN_CENTER, 0, 0);
+}
+
 void lv_obj_get_coords(const lv_obj_t * obj, lv_area_t * coords)
 {
     LV_ASSERT_OBJ(obj, MY_CLASS);

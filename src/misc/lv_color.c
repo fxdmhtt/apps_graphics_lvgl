@@ -112,6 +112,15 @@ lv_color32_t lv_color_to_32(lv_color_t color, lv_opa_t opa)
     return c32;
 }
 
+lv_color_t lv_color_hex(uint32_t c)
+{
+    lv_color_t ret;
+    ret.red = (c >> 16) & 0xff;
+    ret.green = (c >> 8) & 0xff;
+    ret.blue = (c >> 0) & 0xff;
+    return ret;
+}
+
 uint16_t lv_color_to_u16(lv_color_t color)
 {
     return ((color.red & 0xF8) << 8) + ((color.green & 0xFC) << 3) + ((color.blue & 0xF8) >> 3);
@@ -245,6 +254,16 @@ lv_color_hsv_t lv_color_rgb_to_hsv(uint8_t r8, uint8_t g8, uint8_t b8)
 lv_color_hsv_t lv_color_to_hsv(lv_color_t c)
 {
     return lv_color_rgb_to_hsv(c.red, c.green, c.blue);
+}
+
+lv_color_t lv_color_white(void)
+{
+    return lv_color_make(0xff, 0xff, 0xff);
+}
+
+lv_color_t lv_color_black(void)
+{
+    return lv_color_make(0x00, 0x00, 0x00);
 }
 
 /**********************
